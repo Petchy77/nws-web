@@ -29,6 +29,12 @@
       .machinery-art i:nth-child(3) { left:60%; bottom:19%; height:18%; width:10%; background:#0c5264; }
       .machinery-art b { position:absolute; right:15%; top:28%; z-index:2; padding:8px; color:#9efcff; border:1px solid #4ae9ee; font:700 10px/1.1 'JetBrains Mono',monospace; text-align:center; }
       .form-status { clear:both; min-height:1.4em; margin:10px 0 0; color:#79dfe6; font:500 8px 'JetBrains Mono',monospace; }
+      .factory-shot > img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:saturate(.78) contrast(1.08) brightness(.72); }
+      .brand-mark { background:#fff url('assets/nws-logo.png') center/150% auto no-repeat; border-color:#4eeaf0; }
+      .brand-mark i { display:none; }
+      .trademark-badge { position:absolute; z-index:21; top:74px; right:clamp(18px,3vw,52px); width:125px; padding:5px; background:#fff; border:1px solid #62eaf0; }
+      .trademark-badge img { display:block; width:100%; height:auto; }
+      @media (max-width:700px) { .trademark-badge { display:none; } }
     </style>
   </head>
   <body>
@@ -39,6 +45,7 @@
       <nav class="site-nav" id="site-nav" aria-label="เมนูหลัก"><a href="#top">Home</a><a class="active" href="solutions/">Solutions</a><a href="about/">About Us</a><a href="contact/">Contact</a></nav>
       <div class="header-tools"><span class="locale"><b>TH</b><span>EN</span></span><a class="header-cta" href="#contact">นัดหมายปรึกษา <span>/</span> Consult an Expert</a></div>
     </header>
+    <aside class="trademark-badge" aria-label="เครื่องหมายบริษัท"><img src="assets/company-trademark.png" alt="บริษัท นิว เวิลด์ โซลูชั่นส์ จำกัด" /></aside>
 
     <main id="main">
       <section class="system-bar" aria-label="สถานะบริการ"><span><i></i> CLEANROOM FAB · ONLINE</span><span>SECS/GEM BRIDGE RUNTIME: V4.9.2</span><span>EDGE LEVEL TELEMETRY <b>FAB CLASS B</b></span></section>
@@ -46,7 +53,7 @@
         <div class="hero-copy"><p class="micro"><span></span> ADVANCED ARCHITECTURE SPECIFICATION</p><h1>ขีดความสามารถและโซลูชันขั้นสูงเพื่อ<br />โรงงานอัจฉริยะ</h1><h2>Smart Manufacturing &amp; Industrial IoT Solutions</h2><p class="hero-lede">นิว เวิลด์ โซลูชั่นส์ สนับสนุนธุรกิจด้วยวัสดุ อุปกรณ์เทคโนโลยีการผลิต และบริการซอฟต์แวร์ เพื่อช่วยให้โครงการเดินหน้าอย่างเป็นระบบและสอดคล้องกับการใช้งานจริง</p></div>
         <aside class="yield-panel" aria-label="ภาพรวมโซลูชัน"><div class="panel-head"><span>YIELD RECOVERY EXCHANGE</span><b>+0.8%</b></div><div class="panel-line"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="yield-metrics"><div><small>DATA SIGNAL</small><strong>96.8%</strong></div><div><small>ZONE HEALTH</small><strong>99.98%</strong></div></div></aside>
         <div class="hero-grid">
-          <figure class="factory-shot" aria-label="ภาพจำลองสภาพแวดล้อมการผลิตและระบบควบคุม"><div class="machinery-art" aria-hidden="true"><i></i><i></i><i></i><b>LIVE<br />DATA</b></div><figcaption><span>STATION 18 · IN-LINE MONITORING</span><strong>Automated process visibility</strong><small>เชื่อมข้อมูลหน้างานเพื่อสนับสนุนการตัดสินใจ</small></figcaption></figure>
+          <figure class="factory-shot"><img src="assets/smart-factory.png" alt="โรงงานอัจฉริยะและแขนกลอุตสาหกรรม" /><figcaption><span>STATION 18 · IN-LINE MONITORING</span><strong>Automated process visibility</strong><small>เชื่อมข้อมูลหน้างานเพื่อสนับสนุนการตัดสินใจ</small></figcaption></figure>
           <div class="sensor-wall"><div class="sensor-intro"><span>CHAMBER 01 · MICRO-ENVIRONMENT</span><b>STABLE SIGNAL</b><p>มุมมองข้อมูลสถานะและองค์ประกอบของหน้างาน</p></div><div class="sensor-cells"><div><small>TEMPERATURE</small><strong>20.4 <em>±0.05</em></strong><span>Target 20.0°C</span></div><div><small>RELATIVE HUMIDITY</small><strong>41.2 <em>±0.8%</em></strong><span>Target 40–45%</span></div><div><small>PRESSURE DIFF</small><strong>+48.7 <em>Pa</em></strong><span>Positive differential</span></div><div><small>PARTICLE COUNT</small><strong>0.00 <em>/m³</em></strong><span>Threshold &lt; 1.0</span></div></div><div class="throughput"><span><i></i> Data Store Throughput</span><b>184,200 msg/sec</b></div></div>
         </div>
       </section>
