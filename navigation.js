@@ -18,4 +18,15 @@
     const label = link.textContent.toLowerCase();
     if (/consult|นัดหมาย|ปรึกษา|contact/.test(label)) link.href = '/contact/';
   });
+
+  document.querySelectorAll('img[alt="Profile"]').forEach((logo) => {
+    logo.src = '/assets/nws-mark.png';
+    logo.alt = 'ตราบริษัท นิว เวิลด์ โซลูชั่นส์ จำกัด';
+    logo.classList.remove('w-8', 'h-8', 'rounded-full');
+    logo.classList.add('w-12', 'h-12', 'rounded');
+    logo.style.objectFit = 'contain';
+    logo.style.padding = '3px';
+    logo.style.border = '1px solid rgba(0, 242, 254, .65)';
+    logo.style.background = '#fff';
+  });
 })();
