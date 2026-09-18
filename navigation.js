@@ -29,4 +29,20 @@
     logo.style.border = '1px solid rgba(0, 242, 254, .65)';
     logo.style.background = '#fff';
   });
+
+  document.querySelectorAll('img[alt*="cleanroom smart factory"]').forEach((image) => {
+    image.src = '/assets/smart-factory.png';
+  });
+
+  document.querySelectorAll('a[href="mailto:Customer-Support@nwsthai.com"]').forEach((link) => {
+    link.href = 'mailto:support@nwsthai.com';
+    link.textContent = link.textContent.replace(/Customer-Support@nwsthai\.com/g, 'support@nwsthai.com');
+  });
+
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+    if (node.parentElement?.tagName !== 'SCRIPT') {
+      node.nodeValue = node.nodeValue.replace(/34\+/g, '30+');
+    }
+  }
 })();
