@@ -45,4 +45,26 @@
       node.nodeValue = node.nodeValue.replace(/34\+/g, '30+');
     }
   }
+
+  const consultationForm = document.querySelector('#consultation-form');
+  if (consultationForm) {
+    consultationForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+
+      const field = (selector) => consultationForm.querySelector(selector)?.value?.trim() || '-';
+      const subject = 'Consultation request from nwsthai.com';
+      const body = [
+        `Name: ${field('#contact-name')}`,
+        `Company: ${field('#company-name')}`,
+        `Phone: ${field('input[type="tel"]')}`,
+        `Email: ${field('input[type="email"]')}`,
+        `Solution: ${field('#solution-focus')}`,
+        '',
+        'Project details:',
+        field('#project-scope'),
+      ].join('\n');
+      window.location.href = `mailto:support@nwsthai.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }, true);
+  }
 })();
