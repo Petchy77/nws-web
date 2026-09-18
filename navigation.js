@@ -35,8 +35,8 @@
   });
 
   const highResolutionVisuals = [
-    ['ISA-95 Smart Manufacturing', '/assets/stitch-factory-01.png'],
-    ['CEO Quote - New World Solutions', '/assets/stitch-nws-logo-dark.png'],
+    ['ISA-95 Smart Manufacturing', '/assets/stitch-home-isa95.png'],
+    ['CEO Quote - New World Solutions', '/assets/stitch-home-ceo-quote.png'],
     ['Automated Silicon Wafer Handling', '/assets/stitch-factory-01.png'],
     ['Cleanroom semiconductor testing', '/assets/stitch-factory-02.png'],
     ['Industrial engineers analyzing', '/assets/stitch-lab-01.png'],
