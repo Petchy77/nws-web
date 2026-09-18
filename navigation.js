@@ -34,6 +34,25 @@
     image.src = '/assets/smart-factory.png';
   });
 
+  const highResolutionVisuals = [
+    ['ISA-95 Smart Manufacturing', '/assets/stitch-factory-01.png'],
+    ['CEO Quote - New World Solutions', '/assets/stitch-nws-logo-dark.png'],
+    ['Automated Silicon Wafer Handling', '/assets/stitch-factory-01.png'],
+    ['Cleanroom semiconductor testing', '/assets/stitch-factory-02.png'],
+    ['Industrial engineers analyzing', '/assets/stitch-lab-01.png'],
+    ['Semiconductor automatic test equipment', '/assets/stitch-factory-03.png'],
+    ['Advanced industrial high-tech cleanroom facility', '/assets/stitch-factory-04.png'],
+  ];
+
+  document.querySelectorAll('img').forEach((image) => {
+    const description = image.alt || image.dataset.alt || '';
+    const replacement = highResolutionVisuals.find(([hint]) => description.includes(hint));
+    if (replacement) {
+      image.src = replacement[1];
+      image.decoding = 'async';
+    }
+  });
+
   document.querySelectorAll('a[href="mailto:Customer-Support@nwsthai.com"]').forEach((link) => {
     link.href = 'mailto:support@nwsthai.com';
     link.textContent = link.textContent.replace(/Customer-Support@nwsthai\.com/g, 'support@nwsthai.com');
