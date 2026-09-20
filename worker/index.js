@@ -168,6 +168,9 @@ function loginPage(error, returnTo, status = 200) {
     ? `<p class="error" role="alert">${escapeHtml(error)}</p>`
     : "";
 
+  const headers = secureHeaders();
+  headers.set("content-type", "text/html; charset=utf-8");
+
   return new Response(
     `<!doctype html>
 <html lang="th">
@@ -215,7 +218,7 @@ function loginPage(error, returnTo, status = 200) {
     </main>
   </body>
 </html>`,
-    { status, headers: secureHeaders() }
+    { status, headers }
   );
 }
 
