@@ -49,7 +49,7 @@ Photography and imagery are sourced from Wikimedia Commons and Ora One's officia
 
 - `assets/hero-server-room.jpg` — "BalticServers data center" by BalticServers.com, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
 - `assets/about-data-center.jpg` — "Virginia Tech - data center" by Christopher Bowns, [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/).
-- `assets/ora-one-screen.jpg` — Ora One (EMMY AI) working-screen screenshot from [oraonethai.com](https://www.oraonethai.com/).
+- `assets/ora-one-screen.png` — Ora One working-screen screenshot provided by New World Solutions.
 - `assets/ai-ml-demo.gif` — product demo screen recording provided by New World Solutions.
 - `assets/managed-it.jpg` — "NOC-Architel" by Mike Reyher, [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/).
 - `assets/favicon.png` — derived from the company logo.
