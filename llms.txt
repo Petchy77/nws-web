@@ -1,12 +1,13 @@
 # New World Solutions Co., Ltd.
 
-> บริษัท นิว เวิลด์ โซลูชั่นส์ จำกัด (NEW WORLD SOLUTIONS CO., LTD.) provides building and construction materials, manufacturing technology equipment, and software services for businesses in Thailand.
+> บริษัท นิว เวิลด์ โซลูชั่นส์ จำกัด (NEW WORLD SOLUTIONS CO., LTD.) provides B2B business technology solutions: Intelligent ERP (Ora One), B2B Managed IT Service (MSP), and AI & Machine Learning — backed by 30+ years of expertise in semiconductor and high-tech manufacturing.
 
 - Canonical website: https://nwsthai.com/
 - Legal entity ID (Thailand): 0135569018076
-- Location: Khlong Luang, Pathum Thani, Thailand
-- Services: building and construction materials; manufacturing technology; software services
+- Location: 29/55 Tara Ville, Khlong 5, Khlong Luang District, Pathum Thani, Thailand
+- Services: Intelligent ERP (Ora One); B2B Managed IT (MSP); AI & Machine Learning
 - Primary language: Thai; supporting language: English
+- Contact: support@nwsthai.com
 
 ## Primary source
 

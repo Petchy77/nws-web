@@ -38,3 +38,17 @@ These are discovery and monitoring steps, not a guarantee of a particular rankin
 ## Company data reference
 
 Company registration, business categories, address, and registered capital are based on the public record at [Data for Thai](https://www.dataforthai.com/company/0135569018076/), accessed 16 September 2026.
+
+## Stack
+
+The site is hand-written static HTML with a single shared stylesheet (`styles.css`) and a small vanilla-JS behavior file (`script.js`) for the TH/EN toggle, mobile menu, footer year, and the contact form. There is no build step, CSS framework, or runtime CDN dependency beyond Google Fonts.
+
+## Image credits
+
+Photography is sourced from Wikimedia Commons under free licenses:
+
+- `assets/hero-server-room.jpg` — "BalticServers data center" by BalticServers.com, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+- `assets/about-data-center.jpg` — "Virginia Tech - data center" by Christopher Bowns, [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/).
+- `assets/solutions-data-center.jpg` — "Data center infrastructure in the United States" by DOE/NREL, public domain.
+
+The two CC BY-SA images require attribution and share-alike. For a fully public launch, consider replacing them with the company's own photography or explicitly licensed stock imagery.

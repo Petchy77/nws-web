@@ -2,6 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://nwsthai.com/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
-  </urlset>
+  <url>
+    <loc>https://nwsthai.com/about/</loc>
+    <lastmod>2026-11-09</lastmod>
+  </url>
+  <url>
+    <loc>https://nwsthai.com/solutions/</loc>
+    <lastmod>2026-11-09</lastmod>
+  </url>
+  <url>
+    <loc>https://nwsthai.com/contact/</loc>
+    <lastmod>2026-11-09</lastmod>
+  </url>
+</urlset>
