@@ -45,10 +45,13 @@ The site is hand-written static HTML with a single shared stylesheet (`styles.cs
 
 ## Image credits
 
-Photography is sourced from Wikimedia Commons under free licenses:
+Photography and imagery are sourced from Wikimedia Commons and Ora One's official site under free licenses:
 
 - `assets/hero-server-room.jpg` — "BalticServers data center" by BalticServers.com, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
 - `assets/about-data-center.jpg` — "Virginia Tech - data center" by Christopher Bowns, [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/).
-- `assets/solutions-data-center.jpg` — "Data center infrastructure in the United States" by DOE/NREL, public domain.
+- `assets/ora-one.jpg` — Ora One product image from [oraonethai.com](https://www.oraonethai.com/).
+- `assets/ai-analytics.jpg` — "Oracle Analytics Cloud Dashboard" by GeneralAB13, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+- `assets/managed-it.jpg` — "NOC-Architel" by Mike Reyher, [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/).
+- `assets/favicon.png` — derived from the company logo.
 
-The two CC BY-SA images require attribution and share-alike. For a fully public launch, consider replacing them with the company's own photography or explicitly licensed stock imagery.
+The CC-licensed images require attribution and share-alike. For a fully public launch, consider replacing them with the company's own photography or explicitly licensed stock imagery.
