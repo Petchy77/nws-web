@@ -45,6 +45,7 @@ body {
 }
 
 a { color: inherit; text-decoration: none; }
+.titled-link:hover { color: var(--blue); text-decoration: underline; }
 
 img { max-width: 100%; display: block; }
 
