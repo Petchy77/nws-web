@@ -370,7 +370,7 @@ button, input, textarea, select { font: inherit; color: inherit; }
 .site-footer a:hover { color: #ffffff; text-decoration: underline; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding: 56px 0 40px; }
 .footer-brand-name { font-size: 17px; font-weight: 700; color: #ffffff; letter-spacing: 0.02em; }
-.footer-brand-sub { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #7fd1a4; margin-top: 4px; }
+.footer-brand-sub { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #7fd1a4; }
 .footer-grid h4 { color: #ffffff; font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; }
 .footer-grid ul { display: flex; flex-direction: column; gap: 10px; font-size: 14px; }
 .footer-about { font-size: 14px; line-height: 1.7; color: #a9bbcd; margin-top: 16px; }
