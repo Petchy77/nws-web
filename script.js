@@ -1,44 +1,83 @@
-const menuButton = document.querySelector('.menu-toggle');
-const nav = document.querySelector('.site-nav');
+/* New World Solutions — shared site behavior */
+(function () {
+  "use strict";
 
-menuButton?.addEventListener('click', () => {
-  const isOpen = nav.classList.toggle('open');
-  menuButton.setAttribute('aria-expanded', isOpen);
-});
+  var root = document.documentElement;
 
-nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
-  nav.classList.remove('open');
-  menuButton?.setAttribute('aria-expanded', 'false');
-}));
+  /* ---- Language toggle (TH / EN) ---- */
+  function setLang(lang) {
+    root.classList.remove("lang-th", "lang-en");
+    root.classList.add("lang-" + lang);
+    root.setAttribute("lang", lang);
 
-document.querySelector('#year').textContent = new Date().getFullYear();
+    document.querySelectorAll(".lang-toggle button").forEach(function (btn) {
+      btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
+    });
 
-const assessmentForm = document.querySelector('#assessment-form');
-const formStatus = document.querySelector('#form-status');
-
-assessmentForm?.addEventListener('submit', (event) => {
-  event.preventDefault();
-
-  if (!assessmentForm.checkValidity()) {
-    assessmentForm.reportValidity();
-    return;
+    try {
+      localStorage.setItem("nws-lang", lang);
+    } catch (e) { /* storage unavailable */ }
   }
 
-  const data = new FormData(assessmentForm);
-  const value = (name) => data.get(name)?.trim() || '-';
-  const subject = `คำขอประเมินโครงการ: ${value('company')}`;
-  const body = [
-    'คำขอเริ่มต้นการประเมินโครงการ',
-    '',
-    `ชื่อผู้ติดต่อ: ${value('name')}`,
-    `องค์กร: ${value('company')}`,
-    `อีเมล: ${value('email')}`,
-    `โทรศัพท์: ${value('phone')}`,
-    '',
-    'ขอบเขตหรือความต้องการ:',
-    value('message'),
-  ].join('\n');
+  var saved = null;
+  try { saved = localStorage.getItem("nws-lang"); } catch (e) { saved = null; }
+  if (saved === "en" || saved === "th") { setLang(saved); }
 
-  formStatus.textContent = 'กำลังเปิดโปรแกรมอีเมลเพื่อส่งถึง support@nwsthai.com';
-  window.location.href = `mailto:support@nwsthai.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-});
+  document.querySelectorAll(".lang-toggle button").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      setLang(btn.getAttribute("data-lang"));
+    });
+  });
+
+  /* ---- Mobile menu ---- */
+  var menuBtn = document.getElementById("menu-toggle");
+  var nav = document.getElementById("site-nav");
+
+  if (menuBtn && nav) {
+    menuBtn.addEventListener("click", function () {
+      var open = nav.classList.toggle("open");
+      menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+
+    nav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        nav.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+
+  /* ---- Footer year ---- */
+  var yearEl = document.getElementById("year");
+  if (yearEl) { yearEl.textContent = String(new Date().getFullYear()); }
+
+  /* ---- Consultation form (mailto) ---- */
+  var form = document.getElementById("consultation-form");
+  if (form) {
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      var value = function (selector) {
+        var el = form.querySelector(selector);
+        return (el && el.value ? el.value : "").trim() || "-";
+      };
+
+      var body = [
+        "New World Solutions — consultation request",
+        "",
+        "Name: " + value("#contact-name"),
+        "Company: " + value("#company-name"),
+        "Email: " + value("#contact-email"),
+        "Phone: " + value("#contact-phone"),
+        "Area of interest: " + value("#contact-interest"),
+        "",
+        "Message:",
+        value("#contact-message")
+      ].join("\n");
+
+      var subject = "Consultation request — nwsthai.com";
+      window.location.href = "mailto:support@nwsthai.com?subject=" +
+        encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    });
+  }
+})();
