@@ -281,6 +281,17 @@ button, input, textarea, select { font: inherit; color: inherit; }
 
 .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .cards.two { grid-template-columns: repeat(2, 1fr); }
+/* --- Specialized team roles grid --- */
+.roles-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; }
+.roles-grid img { width: 100%; height: auto; display: block; }
+.roles-grid img:nth-child(-n+4) { grid-column: span 3; }
+.roles-grid img:nth-child(n+5) { grid-column: span 2; }
+
+@media (max-width: 720px) {
+  .roles-grid { grid-template-columns: 1fr; }
+  .roles-grid img:nth-child(-n+4), .roles-grid img:nth-child(n+5) { grid-column: auto; }
+}
+
 .cards.four { grid-template-columns: repeat(4, 1fr); }
 
 .card {

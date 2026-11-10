@@ -51,7 +51,7 @@ Photography and imagery are sourced from Wikimedia Commons and Ora One's officia
 - `assets/about-data-center.jpg` — "Virginia Tech - data center" by Christopher Bowns, [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/).
 - `assets/ora-one-screen.png` — Ora One working-screen screenshot provided by New World Solutions.
 - `assets/ai-ml-demo.gif` — product demo screen recording provided by New World Solutions.
-- `assets/msp-roles.jpg` — "Seven Critical Technology Roles" graphic provided by New World Solutions.
+- `assets/role-1-ai-ml.jpg` … `assets/role-7-field.jpg` — role cards cropped from the "Seven Critical Technology Roles" graphic provided by New World Solutions.
 - `assets/favicon.png` — derived from the company logo.
 
 The CC-licensed images require attribution and share-alike. For a fully public launch, consider replacing them with the company's own photography or explicitly licensed stock imagery.
