@@ -294,6 +294,11 @@ button, input, textarea, select { font: inherit; color: inherit; }
   .role-desc { padding-left: 0; }
 }
 
+/* Match MSP heading typography to the other service feature sections */
+#msp .section-title { font-size: 26px; line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 14px; }
+#msp .lead { font-size: 16px; line-height: 1.6; margin-top: 0; margin-bottom: 18px; }
+#msp .eyebrow { letter-spacing: 0.12em; margin-bottom: 10px; }
+
 .cards.four { grid-template-columns: repeat(4, 1fr); }
 
 .card {
