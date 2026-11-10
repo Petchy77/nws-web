@@ -358,13 +358,30 @@ button, input, textarea, select { font: inherit; color: inherit; }
 /* --- Two-column feature (solutions) ------------------------------------ */
 
 .feature { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
-#msp .feature { max-width: 920px; margin: 0 auto; gap: 40px; }
 .feature.reverse .feature-media { order: 2; }
 .feature-media { border: 1px solid var(--border); box-shadow: var(--shadow-md); }
 .feature-media img { width: 100%; height: auto; object-fit: cover; aspect-ratio: 16 / 10; }
 .feature h2 { font-size: 26px; margin-bottom: 14px; }
 .feature .feature-tag { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--green); margin-bottom: 10px; }
 .feature p { color: var(--muted); font-size: 16px; margin-bottom: 18px; }
+/* --- Specialized team roles list (MSP) --- */
+#msp .section-head { max-width: 920px; margin: 0 auto 36px; }
+#msp .section-title { font-size: 26px; line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 14px; }
+#msp .lead { font-size: 16px; line-height: 1.6; margin-top: 0; }
+#msp .eyebrow { letter-spacing: 0.12em; margin-bottom: 10px; }
+.roles-list { display: flex; flex-direction: column; gap: 2px; max-width: 920px; margin: 0 auto; }
+.role-row { display: flex; align-items: center; gap: 28px; padding: 9px 0; }
+.role-body { flex: 1; min-width: 0; }
+.role-title { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 700; color: var(--text); }
+.role-title svg { width: 18px; height: 18px; color: var(--green); flex: 0 0 auto; }
+.role-desc { font-size: 15px; color: var(--muted); margin-top: 3px; padding-left: 28px; }
+.role-icon { width: 92px; height: 92px; object-fit: contain; border-radius: 8px; flex: 0 0 auto; }
+@media (max-width: 640px) {
+  .role-icon { width: 64px; height: 64px; }
+  .role-desc { padding-left: 0; }
+  .role-row { gap: 16px; }
+}
+
 
 /* --- Footer ------------------------------------------------------------ */
 
