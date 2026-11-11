@@ -534,10 +534,3 @@ button, input, textarea, select { font: inherit; color: inherit; }
   #msp .section-head { max-width: 640px; }
 }
 
-/* --- Custom AI Services: phone screenshots --- */
-.phone-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 520px; margin: 0 auto; }
-.phone-pair img { width: 100%; height: auto; aspect-ratio: 600 / 1100; object-fit: cover; object-position: top; border-radius: 22px; border: 1px solid var(--border); box-shadow: var(--shadow-md); background: #fff; }
-.phone-pair img:last-child { margin-top: 40px; }
-@media (max-width: 640px) { .phone-pair { gap: 12px; } .phone-pair img { border-radius: 16px; } .phone-pair img:last-child { margin-top: 24px; } }
-.phone-figure { margin: 0; }
-.phone-figure figcaption { text-align: center; color: var(--muted); font-size: 14px; margin-top: 16px; }
