@@ -23,6 +23,27 @@ The site is ready for GitHub Pages. The `CNAME` file requests `nwsthai.com` as t
 
 Microsoft 365's Domains page is not necessarily the authoritative DNS host. Verify the nameservers before changing any DNS records, and retain existing Microsoft 365 MX/TXT records.
 
+## EMMY AI assistant
+
+A chat widget (`emmy.js`, styles at the end of `styles.css`) loaded on every page. It calls the `nws-emmy` Cloudflare Worker in `worker-emmy/`, which holds the OpenRouter key and answers using the company information in its system prompt. The widget stays hidden until `EMMY_ENDPOINT` in `emmy.js` is set.
+
+Deploy:
+
+```sh
+cd worker-emmy
+npx wrangler login
+npx wrangler secret put OPENROUTER_API_KEY   # paste the key from openrouter.ai/keys
+npx wrangler deploy                          # prints https://nws-emmy.<subdomain>.workers.dev
+curl https://nws-emmy.<subdomain>.workers.dev/health
+```
+
+Then set `EMMY_ENDPOINT = "https://nws-emmy.<subdomain>.workers.dev/api/chat"` in `emmy.js` and push.
+
+- Model: `EMMY_MODEL` in `worker-emmy/wrangler.toml` (any slug from openrouter.ai/models).
+- Allowed origins, message limits, and the company knowledge live at the top of `worker-emmy/index.js` — update the knowledge when services change.
+- Per-IP rate limit: 20 messages/minute. Also set a monthly credit limit on the OpenRouter key.
+- Local test: open `http://localhost:4173/?emmy=<worker-url>/api/chat` (override works on localhost only).
+
 ## SEO and discovery
 
 The site includes a canonical URL, crawl directives, social metadata, organization structured data, `robots.txt`, `sitemap.xml`, and `llms.txt` (a concise plain-language company summary for AI tools that choose to read it).

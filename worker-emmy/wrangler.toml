@@ -1,0 +1,17 @@
+name = "nws-emmy"
+main = "index.js"
+compatibility_date = "2026-09-19"
+account_id = "0c80a2f483b78e00e854da639bcf51bf"
+workers_dev = true
+
+# Secret (set once, never commit):
+#   npx wrangler secret put OPENROUTER_API_KEY
+# Model: any OpenRouter model slug (check https://openrouter.ai/models)
+[vars]
+EMMY_MODEL = "anthropic/claude-haiku-4.5"
+
+# Per-IP rate limit: 20 messages per 60 seconds.
+[[ratelimits]]
+name = "RATE_LIMITER"
+namespace_id = "1001"
+simple = { limit = 20, period = 60 }
