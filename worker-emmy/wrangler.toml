@@ -6,9 +6,11 @@ workers_dev = true
 
 # Secret (set once, never commit):
 #   npx wrangler secret put OPENROUTER_API_KEY
-# Model: any OpenRouter model slug (check https://openrouter.ai/models)
+# Model: any OpenRouter model slug. ":free" models cost nothing but have daily limits
+# (check current free models at https://openrouter.ai/models?max_price=0).
+# EMMY answers from the FAQ first, so only unmatched questions reach the model.
 [vars]
-EMMY_MODEL = "anthropic/claude-haiku-4.5"
+EMMY_MODEL = "meta-llama/llama-3.3-70b-instruct:free"
 
 # Per-IP rate limit: 20 messages per 60 seconds.
 [[ratelimits]]

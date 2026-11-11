@@ -23,26 +23,30 @@ The site is ready for GitHub Pages. The `CNAME` file requests `nwsthai.com` as t
 
 Microsoft 365's Domains page is not necessarily the authoritative DNS host. Verify the nameservers before changing any DNS records, and retain existing Microsoft 365 MX/TXT records.
 
-## EMMY AI assistant
+## EMMY assistant
 
-A chat widget (`emmy.js`, styles at the end of `styles.css`) loaded on every page. It calls the `nws-emmy` Cloudflare Worker in `worker-emmy/`, which holds the OpenRouter key and answers using the company information in its system prompt. The widget stays hidden until `EMMY_ENDPOINT` in `emmy.js` is set.
+A chat widget (`emmy.js`, styles at the end of `styles.css`) loaded on every page. It works in three layers:
 
-Deploy:
+1. **FAQ (always on, free).** Answers from the `FAQ` list at the top of `emmy.js` (TH/EN keywords + answers). Edit that list when services or contact details change.
+2. **AI fallback (optional).** Questions the FAQ can't match go to the `nws-emmy` Cloudflare Worker in `worker-emmy/`, which calls OpenRouter with the company information in its system prompt. Off until `EMMY_ENDPOINT` in `emmy.js` is set; without it, unmatched questions get a polite "contact our team" reply.
+3. **Handoff to email.** "Contact our team" opens a short form in the chat (name, email/phone, company, message) and opens the visitor's email app with a message to support@nwsthai.com, including the chat transcript.
+
+Enable the AI fallback:
 
 ```sh
 cd worker-emmy
 npx wrangler login
-npx wrangler secret put OPENROUTER_API_KEY   # paste the key from openrouter.ai/keys
+npx wrangler secret put OPENROUTER_API_KEY   # key from openrouter.ai/keys
 npx wrangler deploy                          # prints https://nws-emmy.<subdomain>.workers.dev
 curl https://nws-emmy.<subdomain>.workers.dev/health
 ```
 
 Then set `EMMY_ENDPOINT = "https://nws-emmy.<subdomain>.workers.dev/api/chat"` in `emmy.js` and push.
 
-- Model: `EMMY_MODEL` in `worker-emmy/wrangler.toml` (any slug from openrouter.ai/models).
-- Allowed origins, message limits, and the company knowledge live at the top of `worker-emmy/index.js` — update the knowledge when services change.
-- Per-IP rate limit: 20 messages/minute. Also set a monthly credit limit on the OpenRouter key.
-- Local test: open `http://localhost:4173/?emmy=<worker-url>/api/chat` (override works on localhost only).
+- Model: `EMMY_MODEL` in `worker-emmy/wrangler.toml`. Defaults to a free (`:free`) OpenRouter model; free models have daily request limits, so check current free models at openrouter.ai/models.
+- Allowed origins, message limits, and the company knowledge live at the top of `worker-emmy/index.js`.
+- Per-IP rate limit: 20 messages/minute.
+- Local test of the AI layer: `http://localhost:4173/?emmy=<worker-url>/api/chat` (override works on localhost only).
 
 ## SEO and discovery
 

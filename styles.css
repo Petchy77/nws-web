@@ -576,3 +576,20 @@ button, input, textarea, select { font: inherit; color: inherit; }
   .emmy-panel { width: 100%; height: calc(100vh - 24px); }
 }
 @media (prefers-reduced-motion: reduce) { .emmy-msg.typing i { animation: none; } }
+.emmy-link { display: block; margin-top: 8px; font-weight: 600; color: var(--blue); text-decoration: none; }
+.emmy-link::after { content: " →"; }
+.emmy-link:hover { text-decoration: underline; }
+.emmy-cta { display: block; margin-top: 10px; border: 0; border-radius: 8px; background: var(--blue); color: #fff; font: 600 13.5px var(--font); padding: 8px 12px; cursor: pointer; }
+.emmy-cta:disabled { opacity: .5; cursor: default; }
+.emmy-chips { max-height: 92px; overflow-y: auto; }
+.emmy-chips button.contact { background: var(--blue); border-color: var(--blue); color: #fff; }
+.emmy-lead { align-self: stretch; background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+.emmy-lead b { font-size: 14.5px; color: var(--text); }
+.emmy-lead input, .emmy-lead textarea { border: 1px solid var(--border-strong); border-radius: 8px; padding: 8px 10px; font: 14px var(--font); color: var(--text); resize: vertical; }
+.emmy-lead input:focus, .emmy-lead textarea:focus { outline: 2px solid var(--blue); outline-offset: -1px; }
+.emmy-lead.done { opacity: .6; }
+.emmy-err { margin: 0; font-size: 12.5px; color: #b91c1c; }
+.emmy-lead-actions { display: flex; gap: 8px; justify-content: flex-end; }
+.emmy-lead-actions button { border: 1px solid var(--blue); background: var(--blue); color: #fff; font: 600 13.5px var(--font); border-radius: 8px; padding: 8px 14px; cursor: pointer; }
+.emmy-lead-actions button.ghost { background: #fff; color: var(--blue); border-color: var(--border-strong); }
+.emmy-chips.compact button:not(.contact) { display: none; }
